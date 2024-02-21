@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row" *ngFor="let task of tasks; let i = index">
+    <div
+      class="col"
+      *ngIf="task.status == 'To Do'"
+      [ngStyle]="{ 'background-color': 'green', color: 'white' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+      {{ task.status }}
+      <span [ngStyle]="{ 'margin-left': '845px' }">
+        <button class="btn btn-primary" (click)="onEdit(i)">Edit</button>
+      </span>
+      <span [ngStyle]="{ 'margin-left': '60px' }">
+        <button class="btn btn-primary" (click)="onDelete(i)">Delete</button>
+      </span>
+    </div>
+
+    <div
+      class="col"
+      *ngIf="task.status == 'In Progress'"
+      [ngStyle]="{ 'background-color': 'yellow' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+      {{ task.status }}
+      <span [ngStyle]="{ 'margin-left': '800px' }">
+        <button class="btn btn-primary" (click)="onEdit(i)">Edit</button>
+      </span>
+      <span [ngStyle]="{ 'margin-left': '60px' }">
+        <button class="btn btn-primary" (click)="onDelete(i)">Delete</button>
+      </span>
+    </div>
+
+    <div
+      class="col"
+      *ngIf="task.status == 'Done'"
+      [ngStyle]="{ 'background-color': 'red', color: 'white' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+      {{ task.status }}
+      <span [ngStyle]="{ 'margin-left': '833px' }">
+        <button class="btn btn-primary" (click)="onEdit(i)">Edit</button>
+      </span>
+      <span [ngStyle]="{ 'margin-left': '60px' }">
+        <button class="btn btn-primary" (click)="onDelete(i)">Delete</button>
+      </span>
+    </div>
+  </div>
+</div>

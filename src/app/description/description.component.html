@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row" *ngFor="let task of tasks">
+    <div
+      class="col"
+      *ngIf="task.status == 'To Do'"
+      [ngStyle]="{ 'background-color': 'green', color: 'white' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+    </div>
+    <div
+      class="col"
+      *ngIf="task.status == 'In Progress'"
+      [ngStyle]="{ 'background-color': 'yellow' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+    </div>
+    <div
+      class="col"
+      *ngIf="task.status == 'Done'"
+      [ngStyle]="{ 'background-color': 'red', color: 'white' }"
+    >
+      {{ task.title }}
+      {{ task.description }}
+    </div>
+  </div>
+</div>
